@@ -5,14 +5,11 @@ class UberEngine:
     def __init__(self, usuario):
         self.db = DataManager()
         self.usuario = usuario
-        # Valores padrão (depois podemos puxar do config.csv)
         self.custo_km_manutencao = 0.15
         self.consumo_padrao = 9.5
         self.preco_gas_padrao = 5.80
 
     def calcular_turno(self, bruto, km, preco_gas=None, consumo=None):
-        """Calcula os custos usando valores dinâmicos ou padrões"""
-        # Se você digitou um valor, ele usa. Se não, usa o padrão de 5.80
         gas = float(preco_gas) if preco_gas and preco_gas > 0 else self.preco_gas_padrao
         cons = float(consumo) if consumo and consumo > 0 else self.consumo_padrao
         
@@ -30,25 +27,21 @@ class UberEngine:
         }
 
     def get_resumo_mensal(self):
-        """Busca todos os lançamentos do usuário e soma o lucro"""
         df = pd.read_csv(self.db._get_path('lancamentos'))
         if df.empty:
             return 0.0
-        
-        # Filtra apenas o usuário logado
+
         df_user = df[df['usuario'] == self.usuario]
         return df_user['liquido'].sum()
     def get_meta(self):
-        """Lê a meta do arquivo config.csv"""
         path = self.db._get_path('config')
         df = pd.read_csv(path)
         user_meta = df[df['usuario'] == self.usuario]
         if not user_meta.empty:
             return float(user_meta.iloc[0]['meta_mensal'])
-        return 1600.0 # Valor padrão
+        return 1600.0 
 
     def salvar_meta(self, nova_meta):
-        """Salva a nova meta no arquivo config.csv"""
         path = self.db._get_path('config')
         df = pd.read_csv(path)
         if self.usuario in df['usuario'].values:
