@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "driverflow-saas",
+  "private_key_id": "7f72da4150522878bfa30656f433dfd4e08b74f1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCqPrCg5spEX3wQ\n62Kzw2g/v97m2cUlVBn7fUEhmXZcpyDcu9mfnJjHbWt9JOlieOPw+mzjCMpNlDIP\nWWMk8mRsRAl1jrCIN9Adnb0tp4bjNAldHZZvkpktf3JN2dRL3QZOrKerX7zXXUbh\nl3LJCvGXdghqkvVgso1K00AOEXlrdDA07hSMyfX90cjpa4b642BgN2h0XDJV0pJ6\n3IQjPgICYMuVZgufIhjsE++y5kh+SaipZZ9cz93P7ya9/wtM0xTezcNicetyP82F\nyw0Y32B4BF6o8eEn2SdsbedeZdnL8MUdJZLMm0Aa3SjvV1kGBNSGpEach6YcbUME\ngX1FIGMjAgMBAAECggEASSJUK1LpulSQjg4oYRQFQTmSLnaHuAD4hm5o39+2lpff\nSKPUGbqicS2Cuwhzz+8h8KALzb41df0/QhPCwRj15gKWU6+AC4x6dXaRUb8BdbIh\ngaRXv0dpUT/KIUJ97jcdYgfOoZKno5b4/6lZUJ9IaKn2dJ38FlWt1+KHRmPgVrWo\nMCIVx+rS1X5vr+ek5EZovlbOZ6IVCjUX8rLWpNVOMceXAtjB9jDnqZhaJX28RZFt\nWzqJ5REQzH0xsdAjQ1wPT4PL4j3sWO1g0HlAhVxxBJciCADXy989GVclcZ/S6nze\nSlPd+FeKjVF2wQUVxVX01ptGeL2cmz94XO3fGPvBQQKBgQDRNG7o+9vLRAoYSO2D\nT3rO7rblKKaIen0veHUrTJqzzk1SJZ4ncHubTUx808hioWBa6glKdv4aKSkZF5xC\nKaUrHV0+SqTmojmkb9f0ky/hfA4BuvN3wO53uSvwUZ0Vh5KyKjVVNydWlhtqkJhc\na0/8sTIcqGJbc2gYbEdO62Jp4wKBgQDQU1FkaBC+zW11WLRYzuHRlUvSO5HUt/S7\nMNNQdSlMv22qTr5U751CEfN06Ok5aUmScsREpJ0hb63eaWVj4LFg1kQeofK43oCs\nRZwoV8/IJ8aQg1fSD4KH3hoI+W6QTDUl/hSa95NItcNwVq6YDM2srYNSWWeXFEMu\nADn2a7hlwQKBgA7SOyVQapLtABYWXJVX9Shh6x0zExFKNEI/s3Vc2PzyGbI/LgQ3\nSNqI0Glri5/JNQ1b1UqsQXZTAjFf5dceIjB6xRdbrHEWfyTyM4eFQfgklM10lDkg\ntwROXxmIfqt+zlrG+L5PyP6uZcTX96Nciu8pEpbLKyS1eWN5kFe7/13nAoGAYPbm\n430sjiK/1+a5yrxAj3SWHfxsHD6jQp2vPbvKxVY0jRipro74+0+vqbLfG0HOZMPW\nZrzYBkAdBXC5KIvlA9W3TyrB9xpZedXMoVp99APPgGQh9DwT3XmbVKIEvFU8R7rD\njH2/qBAyL4+pJEyRTtZUUXgbp05fFoI0eGYbJgECgYAakCigkOIL0zjvgLqKnbPu\n8O4qYW4/aPcUzIVmF4c0DPIAJlwip8VHvUPAdlkEZRXi1Xss8rSD3CAN+sOhwRmc\nPwLt3ABuD3YAFqFOxsRK4GZWlBjU6BEs0fmmEmzFzbCOrkA8FQNQ1h81+no3xT5x\n6gRCy1JZrG0EBoNpm8ywAQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "python-sheets@driverflow-saas.iam.gserviceaccount.com",
+  "client_id": "101088463239039991349",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/python-sheets%40driverflow-saas.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
