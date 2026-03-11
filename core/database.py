@@ -9,7 +9,6 @@ class DataManager:
         if not os.path.exists(self.folder):
             os.makedirs(self.folder)
             
-        # Definição dos Schemas (Colunas obrigatórias)
         self.schemas = {
             'usuarios': ['usuario', 'senha', 'data_criacao'],
             'lancamentos': ['usuario', 'data', 'bruto', 'gasolina', 'manutencao', 'liquido', 'km', 'veiculo'],
@@ -20,22 +19,20 @@ class DataManager:
         return os.path.join(self.folder, f"{table}.csv")
 
     def inicializar_tabelas(self):
-        """Garante que todos os arquivos existam com os cabeçalhos corretos"""
+
         for table, columns in self.schemas.items():
             path = self._get_path(table)
             if not os.path.exists(path):
                 pd.DataFrame(columns=columns).to_csv(path, index=False)
 
     def salvar_registro(self, table, novo_dado_dict):
-        """Salva um dado novo com validação de colunas"""
+
         path = self._get_path(table)
         df = pd.read_csv(path)
         
-        # Converte o dicionário em DataFrame e garante a ordem das colunas
         novo_df = pd.DataFrame([novo_dado_dict])
         df = pd.concat([df, novo_df], ignore_index=True)
-        
-        # Backup de segurança antes de salvar (previne corromper arquivo)
+
         df.to_csv(path + ".tmp", index=False) 
         os.replace(path + ".tmp", path) 
         return True
