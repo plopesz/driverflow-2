@@ -38,3 +38,22 @@ class UberEngine:
         # Filtra apenas o usuário logado
         df_user = df[df['usuario'] == self.usuario]
         return df_user['liquido'].sum()
+    def get_meta(self):
+        """Lê a meta do arquivo config.csv"""
+        path = self.db._get_path('config')
+        df = pd.read_csv(path)
+        user_meta = df[df['usuario'] == self.usuario]
+        if not user_meta.empty:
+            return float(user_meta.iloc[0]['meta_mensal'])
+        return 1600.0 # Valor padrão
+
+    def salvar_meta(self, nova_meta):
+        """Salva a nova meta no arquivo config.csv"""
+        path = self.db._get_path('config')
+        df = pd.read_csv(path)
+        if self.usuario in df['usuario'].values:
+            df.loc[df['usuario'] == self.usuario, 'meta_mensal'] = nova_meta
+        else:
+            nova_linha = pd.DataFrame([{'usuario': self.usuario, 'meta_mensal': nova_meta}])
+            df = pd.concat([df, nova_linha], ignore_index=True)
+        df.to_csv(path, index=False)
