@@ -4,12 +4,12 @@ from core.auth import AuthManager
 from core.engine import UberEngine
 from datetime import datetime
 
-# 1. INICIALIZAÇÃO
+
 auth = AuthManager()
 
 st.set_page_config(page_title="DriverFlow", page_icon="🚗", layout="wide")
 
-# Estilo CSS Personalizado
+
 st.markdown("""
     <style>
     .stProgress > div > div > div > div { background-color: #800020; }
@@ -27,12 +27,12 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# 2. CONTROLE DE ACESSO
+
 if 'autenticado' not in st.session_state:
     st.session_state['autenticado'] = False
 
 if not st.session_state['autenticado']:
-    # --- TELA DE ACESSO ---
+    
     st.markdown("<h1 style='text-align: center; color: #800020;'>🚗 DriverFlow</h1>", unsafe_allow_html=True)
     tab_login, tab_cadastro = st.tabs(["Entrar", "Criar Conta"])
     
@@ -61,11 +61,9 @@ else:
     st.sidebar.markdown(f"### Bem-vindo, \n# **{user.capitalize()}**")
     if st.sidebar.button("Sair"):
         auth.logout()
-
-    # 2. BUSCA A META NO ARQUIVO
+        
     meta_atual = engine.get_meta()
 
-    # 3. CABEÇALHO COM AJUSTE DE META
     col_tit, col_meta = st.columns([3, 1])
     with col_tit:
         st.title("📊 Painel de Controle")
@@ -78,7 +76,6 @@ else:
                 st.success("Meta atualizada!")
                 st.rerun()
 
-    # 4. CÁLCULOS DE PROGRESSO
     lucro_total = engine.get_resumo_mensal()
     progresso = min(lucro_total / meta_atual, 1.0)
 
@@ -109,8 +106,7 @@ else:
                     engine.db.salvar_registro('lancamentos', dados_calculados)
                     st.success("Turno salvo com sucesso!")
                     st.rerun()
-
-    # 6. HISTÓRICO EM CARDS
+                    
     st.subheader("📋 Histórico Recente")
     df_logs = pd.read_csv(engine.db._get_path('lancamentos'))
     
